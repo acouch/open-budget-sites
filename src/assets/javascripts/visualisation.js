@@ -5,10 +5,10 @@ $(function() {
         var $window = $(window),
             $svg = $('svg#canvas'),
             $sidebar = $('#sidebar'),
-	    $body = $('body'),
-	    $header = $('.site-header'),
-	    $divider = $('.site-header-divider'),
-	    $footer = $('.site-footer');
+            $body = $('body'),
+            $header = $('.site-header'),
+            $divider = $('.site-header-divider'),
+            $footer = $('.site-footer');
 
         var svg = d3.select('body').select('svg#canvas'),
             defs = svg.select('defs'),
@@ -172,6 +172,8 @@ $(function() {
                 if(typeof svgSizeCallback == 'function') {
                     svgSizeCallback();
                 }
+                console.log(svgWidth);
+                console.log(svgHeight);
 
                 svg.attr('width', svgWidth).attr('height', svgHeight);
                 force.size([svgWidth, svgHeight]);
@@ -187,6 +189,7 @@ $(function() {
                     .attr('d', function(d) {
                         var fontSize = vis.labelFontSize / helpers.scale(d);
                         var radius = helpers.computedRadius(d) - fontSize;
+                        console.log(radius);
                         if(radius < fontSize*2) return null;
                         return 'M'+fontSize+','+(radius+fontSize)+' a'+radius+','+radius+' 0 1,1 '+(radius)+','+(radius);
                     });
@@ -674,6 +677,8 @@ $(function() {
                 OpenBudget.track('Visualisation', 'initialized', undefined, undefined, true);
             });
         };
+        console.log(init);
+        console.log(level);
 
         return {
             init: init,

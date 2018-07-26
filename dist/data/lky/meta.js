@@ -16,13 +16,13 @@ window.OpenBudget = {"data":{"meta":{
     "surplus_label": "Surplus",
     "data_url": "data/lky/data.json",
     "value": {
-        "label": "FY 2018",
-        "type": "accounts",
-        "year": "2018"
-    },
-    "value2": {
         "label": "FY 2017",
         "type": "accounts",
         "year": "2017"
+    },
+    "value2": {
+        "label": "FY 2016",
+        "type": "accounts",
+        "year": "2016"
     }
 }}};
